@@ -24,7 +24,7 @@ function renderObjetivos(objetivos) {
                 <p className="text-xl font-medium text-white">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit voluptate velit esse cillum dolore fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt mollit anim id est laborum</p>
             </article>
 
-            <article className="flex flex-col md:grid md:grid-cols-3 justify-between">
+            <article className="flex flex-col lg:grid lg:grid-cols-3 justify-between ">
 
                 <div className="bg-viking-400 p-16 m-8 rounded-3xl min-h-96 hover:scale-105 hover:transition-transform duration-500 ease-out">
                     <h2 className="text-2xl text-viking-800 pb-2">Misión</h2>
