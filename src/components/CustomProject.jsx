@@ -2,7 +2,7 @@ import LogoGithub from "../icons/github.svg";
 
 function CustomProject({ title, description, image, repository }) {
   return (
-    <article className="flex flex-col justify-between p-8 m-10 border-4 border-viking-500 rounded-3xl">
+    <article className="flex flex-col justify-between p-8 m-10 border-4 border-viking-500 rounded-3xl shadow-xl">
       <h3 className="mb-4 text-xl font-semibold text-viking-700">{title}</h3>
       <p className="mb-8 text-md">{description}</p>
       <div className="flex justify-center mb-4">

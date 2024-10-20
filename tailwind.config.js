@@ -22,6 +22,9 @@ export default {
           950: "#000000",
         },
       },
+      backgroundImage: {
+        "backBlue": "url('./assets/bg-blue.webp')",
+      },
     },
   },
   plugins: [],

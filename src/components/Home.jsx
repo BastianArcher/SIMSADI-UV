@@ -18,7 +18,7 @@ function renderObjetivos(objetivos) {
     return (
         <section id="inicio" className="flex flex-col">
 
-            <article className="bg-viking-500 px-14 py-28">
+            <article className="bg-backBlue px-14 py-28">
                 <h1 className="text-6xl font-bold text-white drop-shadow-lg mb-4">SIMSADI-UV</h1>
                 <h2 className="text-4xl font-medium text-white mb-8">El Entorno de Salud Digital de la Universidad de Valparaíso</h2>
                 <p className="text-xl font-medium text-white">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit voluptate velit esse cillum dolore fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt mollit anim id est laborum</p>

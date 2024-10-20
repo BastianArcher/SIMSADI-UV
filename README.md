@@ -1,8 +1,13 @@
-# React + Vite
+# Sitio Web de SIMSADI-UV
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Entorno de Simulación de Salud Digital de la Universidad de Valparaíso, Escuela de Ingeniería Civil Biomédica
 
-Currently, two official plugins are available:
+## Características principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Sitio Informativo**
+- **Proyectos de Estudiantes**
+- **Acceso a Repositorios**
+
+## Tecnologías utilizadas
+
+La plataforma se creó utilizando Vite + React y JSX
