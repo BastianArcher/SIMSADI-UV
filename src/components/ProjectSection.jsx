@@ -25,10 +25,10 @@ const projects = [
     ];
 
 
-function projectsection() {
+export default function projectsection() {
     return (
-    <section id="proyectos">
-        <h2 className="p-5 m-6 text-6xl text-center text-viking-700 ">Proyectos de SIMSADI</h2>
+    <section>
+        <h2 className="lg:p-5 lg:my-10 text-3xl lg:text-6xl text-center text-viking-700 ">Proyectos de SIMSADI</h2>
         <div className="grid grid-cols-1 lg:grid-cols-3">
             {projects.map((project, index) => (
                 <div key={index} className="flex justify-center">
@@ -44,5 +44,3 @@ function projectsection() {
     </section>
   );
 }
-
-export default projectsection;

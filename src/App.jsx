@@ -9,9 +9,9 @@ function App() {
     <div>
       <Head/>
       <Home/>
-      <hr className="border-t-4 border-viking-500 my-10 m-28" />
+      <hr  id="proyectos" className="border-t-4 rounded border-viking-500 my-8 mx-16 lg:my-20 lg:mx-28"/>
       <ProjectSection/>
-      <hr className="border-t-4 border-viking-500 my-10 m-28" />
+      <hr className="border-t-4 rounded border-viking-500 my-8 mx-16 lg:my-20 lg:mx-28"/>
       <Footer/>
     </div>
   )
