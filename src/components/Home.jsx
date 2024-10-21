@@ -14,10 +14,14 @@ export default function Home() {
     return (
         <section id="inicio" className="flex flex-col">
 
-            <article className="bg-backBlue px-6 py-12 lg:px-14 lg:py-28">
-                <h1 className="text-4xl lg:text-6xl font-bold text-white drop-shadow-lg mb-4">SIMSADI-UV</h1>
-                <h2 className="text-xl lg:text-4xl font-medium text-white mb-8">El Entorno de Salud Digital de la Universidad de Valparaíso</h2>
-                <p className="text-sm lg:text-xl font-medium text-white">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit voluptate velit esse cillum dolore fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt mollit anim id est laborum</p>
+            <article className="lg:grid lg:grid-cols-2 bg-backBlue px-6 py-12 lg:px-14 lg:py-28">
+                <div className="lg:flex lg:justify-center lg:items-center">                    
+                    <h1 className="text-4xl lg:text-8xl font-bold text-white drop-shadow-lg mb-4">SIMSADI-UV</h1>
+                </div>
+                <div>
+                    <h2 className="text-xl lg:text-4xl font-medium text-white mb-8">El Entorno de Salud Digital de la Universidad de Valparaíso</h2>
+                    <p className="text-sm lg:text-xl font-medium text-white">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit voluptate velit esse cillum dolore fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt mollit anim id est laborum</p>
+                </div>
             </article>
 
             <article className="flex flex-col lg:grid lg:grid-cols-3 justify-between ">
