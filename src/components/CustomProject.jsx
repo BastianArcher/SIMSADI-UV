@@ -6,7 +6,7 @@ function CustomProject({ title, description, image, repository }) {
       <h3 className="text-base lg:text-xl font-semibold text-viking-700 mb-2 ">{title}</h3>
       <p className="text-sm lg:text-md mb-8">{description}</p>
       <div className="flex justify-center mb-4">
-        <img src={image} alt={title} className="max-w-48 max-h-24  object-contain"/>
+        <img src={image} alt={title} className="max-w-48 max-h-32 lg:max-w-80 lg:max-h-44  object-contain"/>
       </div>
       <div className="mt-4">
         <a href={repository} className="flex justify-center items-center rounded-full text-xl text-white py-2 px-4 bg-viking-500 mr-2 hover:bg-opacity-85 hover:scale-105 hover:transition-transform transition-colors duration-300 ease-in-out">

@@ -40,7 +40,7 @@ export default function Home() {
 
                 <div className="bg-viking-400 text-viking-800 p-8 lg:p-16 m-4 lg:m-6 rounded-3xl lg:min-h-64 hover:scale-105 hover:transition-transform duration-500 ease-out">
                     <h2 className="text-lg lg:text-2xl pb-2">Coordinador</h2>
-                    <h3 className="text-sm lg:text-base">Lorem ipsum dolor sit amet</h3>
+                    <h3 className="text-sm lg:text-base">César Galindo Viaux</h3>
                 </div>
             </article>
         </section>
