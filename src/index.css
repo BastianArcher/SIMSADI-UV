@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary-50: #B9EDF0;
+    --color-primary-100: #A9E8EC;
+    --color-primary-200: #87E0E4;
+    --color-primary-300: #66D7DD;
+    --color-primary-400: #38CBD3;
+    --color-primary-500: #26A6AC;
+    --color-primary-600: #1C7A7F;
+    --color-primary-700: #124E51;
+    --color-primary-800: #082123;
+    --color-primary-900: #041314;
+
+    --background-image-med: url("bg-med.webp");
+
+}
+@layer components {
+    .landing-image {
+        @apply w-52 h-auto object-contain my-8 hover:scale-105 transition duration-300;
+    }
+    .glosary-paragraph {
+        @apply text-justify;
+    }
+    .glosary-headers {
+        @apply text-2xl font-bold mb-4;
+    }
+    .glosary-section {
+        @apply mb-16 scroll-mt-20;
+    }
+}
+@custom-variant dark (&:where(.dark, .dark *));
+
+.hover-underline::after,
+.hover-underline::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background:  #26A6AC;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.hover-underline::after {
+    bottom: -5px;
+    left: 0;
+    transform-origin: right;
+}
+
+.hover-underline::before {
+    top: -5px;
+    left: 0;
+    transform-origin: left;
+}
+
+.hover-underline:hover::after,
+.hover-underline:hover::before {
+    transform: scaleX(1);
+}
