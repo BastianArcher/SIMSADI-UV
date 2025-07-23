@@ -70,65 +70,65 @@ const operations = [
   {
     Operacion: "Buscar conceptos por término",
     Metodo: "GET",
-    Ruta: "[base]/browser/MAIN/concepts?term=[término]",
+    Ruta: "[base]/browser/MAIN/SNOMEDCT-ES/concepts?term=[término]",
     Tipo: "SNOMED",
     Descripcion:
       "Busca conceptos que contengan el texto indicado en sus descripciones.",
-    Ejemplo: "[IP]/browser/MAIN/concepts?term=fractura",
+    Ejemplo: "[IP]/browser/MAIN/SNOMEDCT-ES/concepts?term=fractura",
   },
   {
     Operacion: "Obtener concepto por ID",
     Metodo: "GET",
-    Ruta: "[base]/browser/MAIN/concepts/[conceptId]",
+    Ruta: "[base]/browser/MAIN/SNOMEDCT-ES/concepts/[conceptId]",
     Tipo: "SNOMED",
     Descripcion:
       "Devuelve los detalles completos de un concepto, incluyendo relaciones y descripciones.",
-    Ejemplo: "[IP]/browser/MAIN/concepts/64572001",
+    Ejemplo: "[IP]/browser/MAIN/SNOMEDCT-ES/concepts/64572001",
   },
   {
     Operacion: "Listar descripciones de un concepto",
     Metodo: "GET",
-    Ruta: "[base]/browser/MAIN/concepts/[conceptId]/descriptions",
+    Ruta: "[base]/browser/MAIN/SNOMEDCT-ES/concepts/[conceptId]/descriptions",
     Tipo: "SNOMED",
     Descripcion:
       "Recupera todos los términos asociados a un concepto (sinónimos, términos preferidos, etc).",
-    Ejemplo: "[IP]/browser/MAIN/concepts/64572001/descriptions",
+    Ejemplo: "[IP]/browser/MAIN/SNOMEDCT-ES/concepts/64572001/descriptions",
   },
   {
     Operacion: "Listar hijos de un concepto",
     Metodo: "GET",
-    Ruta: "[base]/browser/MAIN/concepts/[conceptId]/children",
+    Ruta: "[base]/browser/MAIN/SNOMEDCT-ES/concepts/[conceptId]/children",
     Tipo: "SNOMED",
     Descripcion:
       "Devuelve los conceptos hijos directos (descendientes inmediatos) del concepto dado.",
-    Ejemplo: "[IP]/browser/MAIN/concepts/404684003/children",
+    Ejemplo: "[IP]/browser/MAIN/SNOMEDCT-ES/concepts/404684003/children",
   },
   {
     Operacion: "Listar ancestros de un concepto",
     Metodo: "GET",
-    Ruta: "[base]/browser/MAIN/concepts/[conceptId]/ancestors",
+    Ruta: "[base]/browser/MAIN/SNOMEDCT-ES/concepts/[conceptId]/ancestors",
     Tipo: "SNOMED",
     Descripcion:
       "Devuelve todos los conceptos ancestros del concepto especificado.",
-    Ejemplo: "[IP]/browser/MAIN/concepts/22298006/ancestors",
+    Ejemplo: "[IP]/browser/MAIN/SNOMEDCT-ES/concepts/22298006/ancestors",
   },
   {
     Operacion: "Listar relaciones de un concepto",
     Metodo: "GET",
-    Ruta: "[base]/browser/MAIN/concepts/[conceptId]/relationships",
+    Ruta: "[base]/browser/MAIN/SNOMEDCT-ES/concepts/[conceptId]/relationships",
     Tipo: "SNOMED",
     Descripcion:
       "Muestra las relaciones lógicas (atributos y asociaciones) del concepto.",
-    Ejemplo: "[IP]/browser/MAIN/concepts/22298006/relationships",
+    Ejemplo: "[IP]/browser/MAIN/SNOMEDCT-ES/concepts/22298006/relationships",
   },
   {
     Operacion: "Consultar usando ECL",
     Metodo: "GET",
-    Ruta: "[base]/browser/MAIN/concepts?ecl=[expresionECL]",
+    Ruta: "[base]/browser/MAIN/SNOMEDCT-ES/concepts?ecl=[expresionECL]",
     Tipo: "SNOMED",
     Descripcion:
       "Realiza una consulta sobre la jerarquía SNOMED usando ECL (Expression Constraint Language).",
-    Ejemplo: "[IP]/browser/MAIN/concepts?ecl=<<404684003",
+    Ejemplo: "[IP]/browser/MAIN/SNOMEDCT-ES/concepts?ecl=<<404684003",
   },
 ];
 export default operations;
