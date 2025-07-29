@@ -70,7 +70,7 @@ const operations = [
   {
     Operacion: "Buscar conceptos por término",
     Metodo: "GET",
-    Ruta: "[base]/browser/MAIN/SNOMEDCT-ES/descrptions?term=[término]",
+    Ruta: "[base]/browser/MAIN/SNOMEDCT-ES/descriptions?term=[término]",
     Tipo: "SNOMED",
     Descripcion:
       "Busca conceptos que contengan el texto indicado en sus descripciones.",
