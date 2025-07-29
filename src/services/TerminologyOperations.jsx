@@ -106,7 +106,7 @@ const operations = [
   {
     Operacion: "Listar relaciones de un concepto",
     Metodo: "GET",
-    Ruta: "[base]/browser/MAIN/SNOMEDCT-ES/concepts/[conceptId]/relationships",
+    Ruta: "[base]/browser/MAIN/SNOMEDCT-ES/relationships?sourceId=[conceptId]",
     Tipo: "SNOMED",
     Descripcion:
       "Muestra las relaciones lógicas (atributos y asociaciones) del concepto.",
