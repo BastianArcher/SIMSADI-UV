@@ -70,7 +70,7 @@ const operations = [
   {
     Operacion: "Buscar conceptos por término",
     Metodo: "GET",
-    Ruta: "[base]/browser/MAIN/SNOMEDCT-ES/concepts?term=[término]",
+    Ruta: "[base]/browser/MAIN/SNOMEDCT-ES/descrptions?term=[término]",
     Tipo: "SNOMED",
     Descripcion:
       "Busca conceptos que contengan el texto indicado en sus descripciones.",
@@ -84,15 +84,6 @@ const operations = [
     Descripcion:
       "Devuelve los detalles completos de un concepto, incluyendo relaciones y descripciones.",
     Ejemplo: "[IP]/browser/MAIN/SNOMEDCT-ES/concepts/64572001",
-  },
-  {
-    Operacion: "Listar descripciones de un concepto",
-    Metodo: "GET",
-    Ruta: "[base]/browser/MAIN/SNOMEDCT-ES/concepts/[conceptId]/descriptions",
-    Tipo: "SNOMED",
-    Descripcion:
-      "Recupera todos los términos asociados a un concepto (sinónimos, términos preferidos, etc).",
-    Ejemplo: "[IP]/browser/MAIN/SNOMEDCT-ES/concepts/64572001/descriptions",
   },
   {
     Operacion: "Listar hijos de un concepto",
