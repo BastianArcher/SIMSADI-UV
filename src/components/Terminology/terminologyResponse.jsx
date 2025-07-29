@@ -3,6 +3,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { tomorrow, tomorrowNightEighties } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
 const TerminologyResponse = ({ response }) => {
+  const ContainerRef = useRef(null);
   const syntaxRef = useRef(null);
   const [isDarkMode, setIsDarkMode] = useState(
     document.documentElement.classList.contains("dark")
@@ -24,6 +25,9 @@ const TerminologyResponse = ({ response }) => {
   useEffect(() => {
     if (syntaxRef.current) {
       syntaxRef.current.scrollTop = 0;
+    }
+    if (ContainerRef.current) {
+      ContainerRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }, [response]);
 

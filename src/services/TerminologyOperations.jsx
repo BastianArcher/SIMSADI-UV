@@ -110,7 +110,7 @@ const operations = [
     Tipo: "SNOMED",
     Descripcion:
       "Muestra las relaciones lógicas (atributos y asociaciones) del concepto.",
-    Ejemplo: "[IP]/MAIN/SNOMEDCT-ES/concepts/22298006/relationships",
+    Ejemplo: "[IP]/MAIN/SNOMEDCT-ES/relationships?sourceId=22298006",
   },
   {
     Operacion: "Consultar usando ECL",

@@ -57,19 +57,23 @@ El proyecto se compone de los siguientes archivos y carpetas:
 ```
 SIMSADI-UV-FRONTEND/
 ├── node_modules/          # Dependencias del proyecto
-├── public/                # Archivos estáticos
-│   ├── simsadi.webp
+├── public/                # Archivos estáticos como imágenes y favicon
 ├── src/                   # Código fuente del proyecto
-│   ├── assets/            # Archivos estáticos utilizados en el proyecto
-│   ├── components/        # Componentes de sitio
-|   |   ├── landing/        # Componentes de la página de inicio
-|   |   ├── menu/           # Componentes del menú de navegación
-│   |   ├── systems/         # Componentes de los sistemas disponibles
-|   |   ├── utilities/          # Componentes de utilidades
-|   ├── App.jsx            # Componente principal de la aplicación
-│   ├── App.css            # Estilos específicos de la aplicación
-│   ├── index.css          # Estilos globales de la aplicación
-│   ├── main.jsx          # Punto de entrada de la aplicación
+│   ├── components/         # Componentes principales de la aplicación
+│   │   ├── landing/        # Componentes de la página de inicio
+│   │   ├── glosary/        # Componente del glosario
+│   │   ├── fhir/           # Componente para la herramienta FHIR
+│   │   ├── terminology/    # Componente para la herramienta de terminología
+│   │   └── bahmni/         # Componente para la herramienta Bahmni
+│   ├── layout/          # Estructuras de navegación e interfaz
+│   ├── pages/          # Páginas de la aplicación
+│   ├── services/       # Servicios para interactuar con APIs
+│   ├── utils/          # Utilidades y funciones auxiliares
+│   ├── App.jsx         # Componente principal de la aplicación
+│   ├── App.css         # Estilos globales de la aplicación
+│   ├── index.css       # Estilos de Tailwind CSS y personalizados
+│   └── main.jsx        # Archivo principal de React
+├── .env                  # Variables de entorno del proyecto
 ├── index.html            # Archivo HTML principal
 ├── eslint.config.js       # Configuración de ESLint para el proyecto
 ├── package.json           # Archivo de configuración del proyecto
@@ -79,13 +83,12 @@ SIMSADI-UV-FRONTEND/
 
 **Nota importante:** Algunas variables como usuarios e IPs de servidores se encuentran definidas en un archivo `.env` que no será subido al repositorio. Estas variables corresponden a:
 
-- VITE_AUTH_EMAIL = [correo electrónico de autenticación]
-- VITE_AUTH_PASSWORD = [contraseña de autenticación]
-- VITE_FHIR_SERVER_IP= http:// [IP:Puerto] /fhir
-- VITE_TERMINOLOGY_LOCAL_IP = http://[IP:Puerto]
-- VITE_TERMINOLOGY_VPN_IP = http:// [IP:Puerto]
-- VITE_BAHMNI_LOCAL_IP="https:// [IP] /bahmni/home/index.html#/login"
-- VITE_BAHMNI_VPN_IP="https:// [IP] /bahmni/home/index.html#/login"
+VITE_AUTH_EMAIL=
+VITE_AUTH_PASSWORD=
+VITE_FHIR_SERVER_IP=
+VITE_TERMINOLOGY_SNOMED_IP=
+VITE_TERMINOLOGY_FHIR_IP=
+VITE_BAHMNI_URL="https://[IP]/bahmni/home/index.html#/login"
 
 Al ser un proyecto compilado con Vite, las variables de entorno deben comenzar con `VITE_` para que sean accesibles en el código fuente.
 
@@ -226,7 +229,6 @@ Dentro de la carpeta `landing`, se crean los siguientes archivos:
 - `Landing.jsx`: Componente principal de la página de inicio.
 - `login.jsx`: Componente para el inicio de sesión.
 - `Glosary.jsx`: Componente para el glosario de términos.
-- `About.jsx`: Componente para la sección "Acerca de".
 
 La estructura resumida de `Landing.jsx` es la siguiente:
 
