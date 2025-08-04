@@ -147,7 +147,7 @@ const Terminology = () => {
   };
 
   return (
-    <div className="flex justify-center min-h-screen py-10 bg-primary-700">
+    <div className="flex justify-center min-h-screen py-10 bg-gradient-to-br from-snowstorm-2 to-snowstorm-3 dark:from-snowstorm-2-dark dark:to-snowstorm-3-dark">
       <BackButton />
       <form
         className="h-fit w-5xl p-10 bg-white dark:bg-primary-800 border-4 dark:border-primary-600 border-primary-300 rounded-xl shadow-md"

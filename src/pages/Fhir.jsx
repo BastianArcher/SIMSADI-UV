@@ -21,8 +21,6 @@ const FHIR = () => {
   const responseContainerRef = useRef(null);
 
   const FHIR_SERVER = import.meta.env.VITE_FHIR_SERVER_IP;
-  const navigate = useNavigate();
-  const handleNavigation = (path) => navigate(path);
 
   useEffect(() => {
     getResourceTypes(FHIR_SERVER).then(setResourceTypes);
@@ -36,7 +34,8 @@ const FHIR = () => {
   };
 
   return (
-    <div className="flex justify-center min-h-screen py-10 bg-primary-700">
+    <div className="flex justify-center min-h-screen py-10 bg-gradient-to-br from-fhir-1 to-fhir-3 dark:from-fhir-1-dark dark:to-fhir-3-dark">
+      
       <BackButton/>
       <form
         className="h-fit w-5xl p-10 dark:bg-primary-800 dark:border-primary-600 bg-white border-4 border-primary-300 rounded-xl shadow-md"

@@ -12,6 +12,28 @@
     --color-primary-800: #082123;
     --color-primary-900: #041314;
 
+    --color-fhir-1: #E20E18;
+    --color-fhir-2: #E54E18;
+    --color-fhir-3: #EE8D07;
+    --color-fhir-4: #F8BD00;
+
+    --color-fhir-1-dark: #8e1014;
+    --color-fhir-2-dark: #99411c;
+    --color-fhir-3-dark: #a46616;
+    --color-fhir-4-dark: #b38b0a;
+
+    --color-snowstorm-1: #222222;
+    --color-snowstorm-2: #3E5365;
+    --color-snowstorm-3: #1176BE;
+    --color-snowstorm-4: #03A5E0;
+
+    --color-snowstorm-1-dark: #111111;
+    --color-snowstorm-2-dark: #2a3a47;
+    --color-snowstorm-3-dark: #0e5d97;
+    --color-snowstorm-4-dark: #0278a3;
+
+
+
     --background-image-med: url("bg-med.webp");
 
 }
