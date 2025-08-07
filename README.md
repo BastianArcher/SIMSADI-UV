@@ -498,7 +498,7 @@ El componente `Terminology.jsx` tiene varias funciones relevantes para interactu
 
 ### Componente Bahmni
 
-El componente `Bahmni.jsx` se encargará de redirigir al usuario a la interfaz web de Bahmni. Este componente no interactúa directamente con una API, sino que simplemente redirige al usuario a la URL de Bahmni. Esta redirección depende de la conexión del usuario, ya sea a través de una VPN o de una conexión local. Por lo tanto, se utiliza un selector para elegir entre la conexión local o la VPN.
+El componente `Bahmni.jsx` se encargará de redirigir al usuario a la interfaz web de Bahmni. Este componente no interactúa directamente con una API, sino que simplemente redirige al usuario a la URL de Bahmni.
 
 ## Levantamiento de Servidores
 Para levantar los servidores necesarios para el funcionamiento de la plataforma SIMSADI-UV, se deben seguir las instrucciones de los siguientes repositorios:
