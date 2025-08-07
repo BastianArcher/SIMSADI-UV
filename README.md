@@ -11,6 +11,7 @@ A continuación se especifican los pasos seguidos para el desarrollo del fronten
   - [Instalar Tailwind CSS](#instalar-tailwind-css)
   - [Configuración de Tailwind CSS](#configuración-de-tailwind-css)
   - [Instalar React Router](#instalar-react-router)
+  - [Instalar React-Syntax-Highlighter](#instalar-react-syntax-highlighter)
 - [Creación de landing](#creación-de-landing)
   - [Componente Login](#componente-login)
   - [Protección de rutas](#protección-de-rutas)
@@ -83,12 +84,12 @@ SIMSADI-UV-FRONTEND/
 
 **Nota importante:** Algunas variables como usuarios e IPs de servidores se encuentran definidas en un archivo `.env` que no será subido al repositorio. Estas variables corresponden a:
 
-VITE_AUTH_EMAIL=
-VITE_AUTH_PASSWORD=
-VITE_FHIR_SERVER_IP=
-VITE_TERMINOLOGY_SNOMED_IP=
-VITE_TERMINOLOGY_FHIR_IP=
-VITE_BAHMNI_URL="https://[IP]/bahmni/home/index.html#/login"
+- VITE_AUTH_EMAIL=
+- VITE_AUTH_PASSWORD=
+- VITE_FHIR_SERVER_IP=
+- VITE_TERMINOLOGY_SNOMED_IP=
+- VITE_TERMINOLOGY_FHIR_IP=
+- VITE_BAHMNI_URL="https://[IP]/bahmni/home/index.html#/login"
 
 Al ser un proyecto compilado con Vite, las variables de entorno deben comenzar con `VITE_` para que sean accesibles en el código fuente.
 
