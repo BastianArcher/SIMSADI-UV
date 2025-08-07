@@ -395,7 +395,7 @@ const [params, setParams] = useState("");
 const [response, setResponse] = useState("");
 ```
 
-Además, se utilizan otras variables booleanas para determinar los campos de entrada que se mostrarán en la interfaz de usuario según la operación seleccionada desde `FhirOperations.jsx` en la carpeta `utilities`. Estas variables booleanas son:
+Además, se utilizan otras variables booleanas para determinar los campos de entrada que se mostrarán en la interfaz de usuario según la operación seleccionada desde `FhirOperations.jsx`. Estas variables booleanas son:
 
 ```javascript
 const needsResourceType = selectedOp.Ruta.includes("[resourceType]");
@@ -419,7 +419,7 @@ Según estas variables sean true o false se renderizarán ciertas secciones del 
           
 #### Funciones del componente FHIR
 
-Este componente tiene tres funciones relevantes en la lógica de la aplicación:
+Este componente tiene tres funciones relevantes en la lógica de la aplicación y están definidas en modulos separados dentro de la carpeta `components/fhir`:
 
 1. **fetchResourceTypes:** Esta función se encarga de obtener los tipos de recursos disponibles en el servidor HAPI FHIR. Utiliza la operación `$get-resource-counts` para obtener la lista de tipos de recursos en existencia. La respuesta se almacena en el estado `resourceTypes`.
 2. **buildURL:** Esta función construye la URL para realizar la solicitud al servidor HAPI FHIR. Utiliza los valores de `selectedOp`, `resourceType`, `resourceId` y `params` para formar la URL correcta según la operación seleccionada.
@@ -427,65 +427,70 @@ Este componente tiene tres funciones relevantes en la lógica de la aplicación:
 
 ### Componente Terminology
 
-Este componente se encargará de interactuar con el servidor Snowstorm para la gestión de terminologías. Al igual que el componente FHIR, este componente puede incluir funcionalidades como la búsqueda de términos, la visualización de detalles de un término específico y la creación o actualización de términos. Su lógica es similar a la del componente FHIR, pero adaptada a las operaciones y recursos de terminología. Además, posee un selector para elegir entre el servidor local o el servidor VPN, dependiendo de la conexión del usuario.
+Este componente se encargará de interactuar con el servidor Snowstorm para la gestión de terminologías. Al igual que el componente FHIR, este componente puede incluir funcionalidades como la búsqueda de términos, la visualización de detalles de un término específico y la creación o actualización de términos. Su lógica es similar a la del componente FHIR, pero adaptada a las operaciones y recursos de terminología. Además, las operaciones de este servidor son de dos tipos: Las que se realizan hacia la API FHIR y las que se realizan hacia la API de SNOMED-CT.
 
 **Nota importante:** Este servidor no está en una IP pública, por lo que se debe utilizar un proxy local para acceder a él. Para esto, se define un proxy local en el archivo `vite.config.js` de la siguiente manera:
 
 ```javascript
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite';
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd());
 
   return {
     server: {
+      host: true,
       proxy: {
-        '/terminology-local': {
-          target: env.VITE_TERMINOLOGY_LOCAL_IP,
+        '/terminology-fhir': {
+          target: env.VITE_TERMINOLOGY_FHIR_IP,
           changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/terminology-local/, '/fhir'),
+          rewrite: (path) => path.replace(/^\/terminology-fhir/, '/fhir'),
         },
-        '/terminology-vpn': {
-          target: env.VITE_TERMINOLOGY_VPN_IP,
+        '/terminology-snomed': {
+          target: env.VITE_TERMINOLOGY_SNOMED_IP,
           changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/terminology-vpn/, '/fhir'),
-        },
+          rewrite: (path) => path.replace(/^\/terminology-snomed/, '')
+        }
       },
     },
-  };
+  }
 });
 ```
 
 Las variables dinámicas que se utilizan en el componente `Terminology.jsx` son las siguientes:
 
 ```javascript
-const [selectedOp, setSelectedOp] = useState(operations[0]);
+const [selectedOp, setSelectedOp] = useState(terminologyOperations[0]);
 const [codesystemIds, setCodeSystemIds] = useState([]);
-const [selectedCodeSystemId, setSelectedCodeSystemId] = useState("");
 const [valueSetIds, setValueSetIds] = useState([]);
+const [selectedCodeSystemId, setSelectedCodeSystemId] = useState("");
 const [selectedValueSetId, setSelectedValueSetId] = useState("");
 const [URI, setURI] = useState("");
 const [code, setCode] = useState("");
+const [termino, setTermino] = useState("");
+const [conceptId, setConceptId] = useState("");
+const [expresionECL, setExpresionECL] = useState("");
 const [jsonInput, setJsonInput] = useState("");
 const [response, setResponse] = useState("");
-const [tipoConexion, setTipoConexion] = useState("Local");
-const [serverIp, setServerIp] = useState("");
-const [realIp, setRealIp] = useState("");
 ```
 
-Las variables booleanas que determinan los campos de entrada que se mostrarán en la interfaz de usuario son:
+Las variables que determinan los campos de entrada que se mostrarán en la interfaz de usuario son:
 
 ```javascript
 const needsCodesystemId = selectedOp.Ruta.includes("[CodeSystemID]");
 const needsValueSetId = selectedOp.Ruta.includes("[ValueSetID]");
 const needsURI = selectedOp.Ruta.includes("[URI]");
 const needsCode = selectedOp.Ruta.includes("[CÓDIGO]");
+const needsTermino = selectedOp.Ruta.includes("[término]");
+const needsConceptId = selectedOp.Ruta.includes("[conceptId]");
+const needsExpresionECL = selectedOp.Ruta.includes("[expresionECL]");
 const needsBody = selectedOp.Metodo === "POST" || selectedOp.Metodo === "PUT";
 ```
 
 #### Funciones del componente Terminology
 
-- **tipoConexión:** Esta función se encarga de cambiar el tipo de conexión entre el servidor local y el servidor VPN. Dependiendo del tipo de conexión seleccionado, se actualizará la IP del servidor de terminología.
+El componente `Terminology.jsx` tiene varias funciones relevantes para interactuar con el servidor Snowstorm y están definidas en módulos separados dentro de la carpeta `components/terminology`:
+
 - **fetchCodeSystems:** Esta función se encarga de obtener los sistemas de códigos disponibles en el servidor Snowstorm. La respuesta se almacena en el estado `codesystemIds`.
 - **fetchValueSets:** Esta función se encarga de obtener los ValueSets disponibles en el servidor Snowstorm. La respuesta se almacena en el estado `valueSetIds`.
 - **buildURL:** Esta función construye la URL para realizar la solicitud al servidor Snowstorm. Utiliza los valores de `selectedOp`, `selectedCodeSystemId`, `selectedValueSetId`, `URI` y `code` para formar la URL correcta según la operación seleccionada.
