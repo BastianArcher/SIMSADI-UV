@@ -11,6 +11,7 @@ A continuación se especifican los pasos seguidos para el desarrollo del fronten
   - [Instalar Tailwind CSS](#instalar-tailwind-css)
   - [Configuración de Tailwind CSS](#configuración-de-tailwind-css)
   - [Instalar React Router](#instalar-react-router)
+  - [Instalar React-Syntax-Highlighter](#instalar-react-syntax-highlighter)
 - [Creación de landing](#creación-de-landing)
   - [Componente Login](#componente-login)
   - [Protección de rutas](#protección-de-rutas)
